@@ -1,0 +1,14 @@
+/* 设置纯色背景 */
+body {
+  background-color: #F8F8F8;  /* 改为你喜欢的颜色 */
+}
+
+/* 或者设置背景图片 */
+
+body {
+  /* background-image: url(/assets/background/background.webp);  图片放在 source/images/ 下 */
+  background-size: cover;      /* 覆盖整个页面 */
+  background-repeat: no-repeat; /* 不重复 */
+  background-attachment: fixed; /* 固定背景，滚动时不动 */
+  background-position: center;  /* 居中 */
+}

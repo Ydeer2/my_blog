@@ -1,0 +1,24 @@
+name: 探索
+title: 天高云淡，蓝得发亮。| Cloudless Day
+logo:
+  icon: /assets/head_photo.png
+  title: "[{config.title}](/)"
+  subtitle: 天高云淡，蓝得发亮。| Cloudless Day
+
+sidebar:
+  - layout: search
+    override: search
+    filter: /explore/
+    placeholder: 在此处搜索...
+  - toc
+
+comments:
+  giscus:
+    "data-term": "23"
+    "data-mapping": number
+
+base_dir: /
+tree:
+  "探索":
+    - explore/index
+    - bookmark/index

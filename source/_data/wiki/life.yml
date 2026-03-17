@@ -1,0 +1,24 @@
+name: 生活
+title: 天高云淡，蓝得发亮。| Cloudless Day
+logo:
+  icon: /assets/head_photo.png
+  title: "[{config.title}](/)"
+  subtitle: 天高云淡，蓝得发亮。| Cloudless Day
+
+search:
+  filter: /life
+  placeholder: 在 生活 中搜索...
+leftbar:
+  - tree
+  - timeline_stellar_releases
+  - related
+
+comments:
+  service: beaudar
+  beaudar:
+    repo: Ydeer2/comments
+
+base_dir: /life
+tree:
+  "碎碎念":
+    - 2026
