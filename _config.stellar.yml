@@ -19,10 +19,11 @@ logo:
   title: 晴天
   subtitle: "天高云淡，蓝得发亮。 | Cloudless Day"
 
+# 评论插件
 comments:
-  service: beaudar
-  beaudar:
-    repo: Ydeer2/comments
+  service: twikoo
+  twikoo:
+    envId: https://twikoo.yiviwwuo.top
 
 menubar:
   items:

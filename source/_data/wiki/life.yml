@@ -14,9 +14,9 @@ leftbar:
   - related
 
 comments:
-  service: beaudar
-  beaudar:
-    repo: Ydeer2/comments
+  service: twikoo
+  twikoo:
+    envId: https://twikoo.yiviwwuo.top
 
 base_dir: /life
 tree:
