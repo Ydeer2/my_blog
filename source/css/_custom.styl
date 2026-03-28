@@ -1,0 +1,269 @@
+/* ===========================================
+   Twikoo 评论组件美化 - Stellar 主题适配
+   =========================================== */
+:root {
+  --tk-card-bg: #ffffff;
+  --tk-card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --tk-border-radius: 12px;
+  --tk-primary: #3b82f6;
+  --tk-primary-hover: #2563eb;
+  --tk-text-main: #1f2937;
+  --tk-text-light: #6b7280;
+  --tk-input-bg: #f9fafb;
+  --tk-input-border: #e5e7eb;
+  --tk-divider: #f0f2f5;
+}
+
+/* 深色模式适配 - 根据 Stellar 主题的暗色类名 */
+[data-theme="dark"] {
+  --tk-card-bg: #1e1e2f;
+  --tk-card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --tk-text-main: #e5e7eb;
+  --tk-text-light: #9ca3af;
+  --tk-input-bg: #2d2d3a;
+  --tk-input-border: #3a3a44;
+  --tk-divider: #2a2a32;
+}
+
+/* 整体容器 */
+.twikoo {
+  font-family: inherit;
+  max-width: 100%;
+  margin-top: 2rem;
+}
+
+/* ===== 评论输入区 ===== */
+.twikoo .tk-comment-form {
+  background: var(--tk-card-bg);
+  border-radius: var(--tk-border-radius);
+  box-shadow: var(--tk-card-shadow);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.twikoo .tk-comment-form:focus-within {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* 输入框样式 */
+.twikoo .el-textarea__inner,
+.twikoo .el-input__inner {
+  background-color: var(--tk-input-bg);
+  border: 1px solid var(--tk-input-border);
+  border-radius: 8px;
+  color: var(--tk-text-main);
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.twikoo .el-textarea__inner:focus,
+.twikoo .el-input__inner:focus {
+  border-color: var(--tk-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* 昵称、邮箱、网址输入框组 */
+.twikoo .tk-input-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.twikoo .tk-input-item {
+  flex: 1;
+  min-width: 160px;
+}
+
+/* 提交按钮 */
+.twikoo .tk-submit {
+  background: linear-gradient(135deg, var(--tk-primary), var(--tk-primary-hover));
+  border: none;
+  border-radius: 40px;
+  padding: 8px 24px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+.twikoo .tk-submit:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.twikoo .tk-submit:active {
+  transform: translateY(0);
+}
+
+/* 预览按钮 */
+.twikoo .tk-preview-btn {
+  border-radius: 40px;
+  border-color: var(--tk-input-border);
+  color: var(--tk-text-main);
+}
+
+/* ===== 评论列表 ===== */
+.twikoo .tk-comments-container {
+  margin-top: 2rem;
+}
+
+/* 单条评论卡片 */
+.twikoo .tk-comment {
+  background: var(--tk-card-bg);
+  border-radius: var(--tk-border-radius);
+  box-shadow: var(--tk-card-shadow);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+
+.twikoo .tk-comment:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* 评论头部（头像+信息） */
+.twikoo .tk-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.twikoo .tk-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.twikoo .tk-meta {
+  flex: 1;
+}
+
+.twikoo .tk-nick {
+  font-weight: 600;
+  color: var(--tk-text-main);
+  font-size: 1rem;
+}
+
+.twikoo .tk-owner-mark {
+  background: var(--tk-primary);
+  border-radius: 20px;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: white;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.twikoo .tk-time {
+  font-size: 0.75rem;
+  color: var(--tk-text-light);
+  margin-left: 0.5rem;
+}
+
+/* 评论内容 */
+.twikoo .tk-content {
+  margin-top: 0.75rem;
+  margin-left: 0;
+  padding-left: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--tk-text-main);
+  word-break: break-word;
+}
+
+.twikoo .tk-content p {
+  margin-bottom: 0.5rem;
+}
+
+/* 评论操作区（点赞、回复） */
+.twikoo .tk-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  border-top: 1px solid var(--tk-divider);
+  padding-top: 0.75rem;
+}
+
+.twikoo .tk-action-icon {
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--tk-text-light);
+  transition: color 0.2s;
+}
+
+.twikoo .tk-action-icon:hover {
+  color: var(--tk-primary);
+}
+
+/* 回复区域 */
+.twikoo .tk-reply {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--tk-primary);
+}
+
+.twikoo .tk-reply .tk-comment {
+  box-shadow: none;
+  background: var(--tk-input-bg);
+  margin-bottom: 0.8rem;
+  padding: 1rem;
+}
+
+/* 加载更多按钮 */
+.twikoo .tk-load-more {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.twikoo .tk-load-more button {
+  background: transparent;
+  border: 1px solid var(--tk-input-border);
+  border-radius: 40px;
+  padding: 8px 24px;
+  color: var(--tk-text-main);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.twikoo .tk-load-more button:hover {
+  border-color: var(--tk-primary);
+  color: var(--tk-primary);
+  background: rgba(59, 130, 246, 0.05);
+}
+
+/* 空评论状态 */
+.twikoo .tk-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--tk-text-light);
+  background: var(--tk-card-bg);
+  border-radius: var(--tk-border-radius);
+  box-shadow: var(--tk-card-shadow);
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .twikoo .tk-comment-form {
+    padding: 1rem;
+  }
+
+  .twikoo .tk-input-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .twikoo .tk-comment {
+    padding: 1rem;
+  }
+
+  .twikoo .tk-avatar {
+    width: 36px;
+    height: 36px;
+  }
+}
